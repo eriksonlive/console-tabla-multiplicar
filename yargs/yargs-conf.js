@@ -3,19 +3,22 @@ const argv = require('yargs')
         {
             alias: 'hasta',
             type: 'number',
-            default: 10
+            default: 10,
+            describe: 'Establece hasta donde quiere llegar la tabla'
         }
     ).options("b", 
         {
             alias: 'base',
             type: 'number',
-            demandOption: true
+            demandOption: true,
+            describe: 'Establece la base de la tabla'
         }
     ).option("l",
         {
             alias: 'lista',
             type: 'boolean',
-            default: false
+            default: false,
+            describe: 'Si se ejecuta este comando muestra el resultado de la tabla en consola'
         }
     ).check(( argv, options ) => {
         if( isNaN( argv.b ) ){
